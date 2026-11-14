@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار المالية العامة LAW403 | إعداد: نايف المحذوري</title>
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل خطوط عربية أكاديمية واضحة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#071326',
+                            900: '#0B1E3B',
+                            800: '#132D54',
+                            700: '#1D4278',
+                        },
+                        gold: {
+                            600: '#B48327',
+                            500: '#C99636',
+                            400: '#DFB154',
+                            100: '#FAF3E3',
+                            50: '#FDFBF7',
+                        },
+                        marble: '#F7F8FA',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #F7F8FA;
+            color: #0B1E3B;
+        }
+        .fade-in {
+            animation: fadeIn 0.35s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .option-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .option-card:not(:disabled):hover {
+            transform: translateX(-4px);
+            border-color: #C99636;
+            background-color: #FDFBF7;
+        }
+        /* شريط التمرير المخصص */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F8FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-gold-400 selection:text-navy-950">
+
+    <!-- ===================================================================== -->
+    <!-- الترويسة الرسمية الثابتة في كل صفحة (تحمل اسم نايف المحذوري)          -->
+    <!-- ===================================================================== -->
+    <header class="bg-navy-900 text-white border-b-4 border-gold-500 shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+            <!-- شعار وهوية المقرر -->
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 text-navy-950 flex items-center justify-center font-black text-lg shadow-md shrink-0">
+                    LAW
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="font-extrabold text-base sm:text-lg tracking-wide text-white">المالية العامة LAW403</h1>
+                        <span class="hidden sm:inline-block text-[11px] font-bold bg-navy-800 text-gold-400 px-2.5 py-0.5 rounded-full border border-gold-500/30">
+                            سلطنة عُمان
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-300 font-medium">الجامعة العربية المفتوحة • بنك الاختبارات التفاعلية</p>
+                </div>
+            </div>
+
+            <!-- شارة المعد الرسمية -->
+            <div class="flex items-center gap-2.5 bg-navy-950/80 px-3.5 py-1.5 rounded-xl border border-gold-500/40">
+                <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                <div class="text-right">
+                    <span class="text-[10px] text-slate-400 block leading-none">إعداد وتقديم</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-gold-400">نايف المحذوري</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- المحتوى الرئيسي الديناميكي                                            -->
+    <!-- ===================================================================== -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+        <!-- ================================================================= -->
+        <!-- الشاشة 1: الواجهة الترحيبية وإعدادات الاختبار                     -->
+        <!-- ================================================================= -->
+        <section id="welcome-screen" class="fade-in space-y-6">
+            <!-- بطاقة الترحيب الرئيسية -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/90 overflow-hidden">
+                <div class="bg-gradient-to-l from-navy-900 via-navy-800 to-navy-900 px-6 sm:px-10 py-8 text-white relative">
+                    <div class="max-w-3xl space-y-3">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-bold">
+                            <span>⚖️ الاختبار التجريبي الشامل والمُحدّث</span>
+                            <span>•</span>
+                            <span>إعداد: نايف المحذوري</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-black leading-snug">
+                            منصة المراجعة والاختبار التفاعلي في مقرر <span class="text-gold-400">المالية العامة (LAW403)</span>
+                        </h2>
+                        <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                            اختبار تدريبي متكامل مصمم لطلبة القانون في سلطنة عُمان (الجامعة العربية المفتوحة)، يغطي الإيرادات العامة، القروض العامة، آليات الإصدار والتكييف القانوني في التشريع العماني، ووسائل انقضاء القروض وتسويتها مع تعليل قانوني فوري لكل إجابة.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- شريط الإحصائيات السريعة -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse divide-slate-200 bg-gold-50 border-b border-slate-200">
+                    <div class="p-4 text-center">
+                        <div class="text-2xl font-black text-navy-900">30</div>
+                        <div class="text-xs font-bold text-slate-600 mt-0.5">سؤالاً متنوعاً ومُحكماً</div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-2xl font-black text-gold-600">4</div>
+                        <div class="text-xs font-bold text-slate-600 mt-0.5">محاور رئيسية للمقرر</div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-2xl font-black text-navy-900">100%</div>
+                        <div class="text-xs font-bold text-slate-600 mt-0.5">تعليل قانوني ومالي فوري</div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-xl sm:text-2xl font-black text-gold-600">نايف المحذوري</div>
+                        <div class="text-xs font-bold text-slate-600 mt-0.5">إعداد ومراجعة المحتوى</div>
+                    </div>
+                </div>
+
+                <!-- نموذج بدء الاختبار -->
+                <div class="p-6 sm:p-8 space-y-6">
+                    <!-- إدخال اسم الطالب -->
+                    <div class="space-y-2">
+                        <label for="student-name" class="block text-sm font-extrabold text-navy-900">
+                            اسم الطالب / الزميل (اختياري - سيظهر في شهادة النتيجة):
+                        </label>
+                        <input type="text" id="student-name" placeholder="أدخل اسمك هنا (مثال: سالم السيابي)..." 
+                            class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-gold-500 focus:outline-none text-sm font-bold text-navy-900 bg-marble transition">
+                    </div>
+
+                    <!-- اختيار نمط الاختبار -->
+                    <div class="space-y-3">
+                        <label class="block text-sm font-extrabold text-navy-900">
+                            اختر نمط الاختبار أو المحور الذي ترغب بالتدرب عليه:
+                        </label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="mode-selector">
+                            <!-- الخيار الشامل -->
+                            <button type="button" onclick="selectMode('all', this)" class="mode-btn selected-mode text-right p-4 rounded-2xl border-2 border-navy-900 bg-navy-900 text-white shadow-md transition flex items-start justify-between gap-3">
+                                <div>
+                                    <div class="font-extrabold text-sm sm:text-base text-gold-400">🏆 الاختبار التجريبي الشامل (30 سؤالاً)</div>
+                                    <p class="text-xs text-slate-200 mt-1">يشمل جميع محاور المقرر الأربعة لمحاكاة الاختبار النهائي بدقة.</p>
+                                </div>
+                                <span class="text-xs font-black bg-gold-500 text-navy-950 px-2.5 py-1 rounded-lg shrink-0">موصى به</span>
+                            </button>
+
+                            <!-- المحور الأول -->
+                            <button type="button" onclick="selectMode('axis1', this)" class="mode-btn text-right p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-gold-500 transition flex items-start justify-between gap-3">
+                                <div>
+                                    <div class="font-extrabold text-sm text-navy-900">1️⃣ المحور الأول: الإيرادات العامة (8 أسئلة)</div>
+                                    <p class="text-xs text-slate-500 mt-1">الرسم، الثمن العام، الإتاوة، والضريبة (عنصر الجبر والمقابل والتقدير).</p>
+                                </div>
+                            </button>
+
+                            <!-- المحور الثاني -->
+                            <button type="button" onclick="selectMode('axis2', this)" class="mode-btn text-right p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-gold-500 transition flex items-start justify-between gap-3">
+                                <div>
+                                    <div class="font-extrabold text-sm text-navy-900">2️⃣ المحور الثاني: القروض العامة وأنواعها (8 أسئلة)</div>
+                                    <p class="text-xs text-slate-500 mt-1">الاختيارية والإجبارية، المؤبدة والمؤقتة (أذون الخزانة)، والداخلية والخارجية.</p>
+                                </div>
+                            </button>
+
+                            <!-- المحور الثالث -->
+                            <button type="button" onclick="selectMode('axis3', this)" class="mode-btn text-right p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-gold-500 transition flex items-start justify-between gap-3">
+                                <div>
+                                    <div class="font-extrabold text-sm text-navy-900">3️⃣ المحور الثالث: الإصدار والتكييف في عُمان (7 أسئلة)</div>
+                                    <p class="text-xs text-slate-500 mt-1">قانون الدين العام، رقابة مجلس عُمان، التكييف كعقد قانون عام، والاكتتاب.</p>
+                                </div>
+                            </button>
+
+                            <!-- المحور الرابع -->
+                            <button type="button" onclick="selectMode('axis4', this)" class="mode-btn text-right p-4 rounded-2xl border-2 border-slate-200 bg-white hover:border-gold-500 transition flex items-start justify-between gap-3 md:col-span-2">
+                                <div>
+                                    <div class="font-extrabold text-sm text-navy-900">4️⃣ المحور الرابع: وسائل انقضاء القروض وتسويتها (7 أسئلة)</div>
+                                    <p class="text-xs text-slate-500 mt-1">الوفاء، الاستهلاك من فائض الميزانية، التثبيت الإجباري والاختياري، والتبديل.</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- زر البدء -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100">
+                        <div class="text-xs text-slate-500 font-semibold">
+                            📌 إعداد وتنسيق: <span class="text-navy-900 font-extrabold">نايف المحذوري</span> — مخصص للمراجعة الأكاديمية.
+                        </div>
+                        <button onclick="startQuiz()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-l from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-black text-base shadow-lg shadow-gold-500/20 transition transform active:scale-95 flex items-center justify-center gap-2">
+                            <span>ابدأ الاختبار الآن</span>
+                            <span>←</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- الشاشة 2: واجهة أداء الاختبار التفاعلية                           -->
+        <!-- ================================================================= -->
+        <section id="quiz-screen" class="hidden fade-in space-y-5">
+            <!-- شريط التقدم والمعلومات العلوية -->
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+                    <div class="flex items-center gap-2">
+                        <span id="current-axis-badge" class="px-3 py-1 rounded-lg bg-navy-900 text-gold-400 font-bold">
+                            المحور الأول
+                        </span>
+                        <span id="question-type-badge" class="px-2.5 py-1 rounded-lg bg-gold-100 text-gold-600 font-bold">
+                            اختيار من متعدد
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-extrabold">
+                        <span class="text-slate-600">السؤال <span id="q-current-num" class="text-navy-900 text-base">1</span> من <span id="q-total-num">30</span></span>
+                        <span class="text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-200">
+                            النقاط: <span id="live-score">0</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- شريط التقدم البصري -->
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-gradient-to-l from-gold-500 to-navy-800 h-full rounded-full transition-all duration-300" style="width: 3.33%"></div>
+                </div>
+            </div>
+
+            <!-- بطاقة السؤال والخيارات -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <!-- نص السؤال -->
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400">المالية العامة LAW403 • إعداد: نايف المحذوري</span>
+                    </div>
+                    <h3 id="question-text" class="text-lg sm:text-xl font-extrabold text-navy-900 leading-relaxed">
+                        <!-- يُحقن نص السؤال هنا -->
+                    </h3>
+                </div>
+
+                <!-- قائمة الخيارات -->
+                <div id="options-container" class="space-y-3">
+                    <!-- تُحقن الخيارات هنا -->
+                </div>
+
+                <!-- صندوق التعليل القانوني والمالي الفوري -->
+                <div id="feedback-box" class="hidden rounded-2xl p-5 border-2 space-y-2 fade-in">
+                    <div class="flex items-center gap-2 font-black text-base" id="feedback-header">
+                        <!-- حالة الإجابة -->
+                    </div>
+                    <p id="feedback-explanation" class="text-sm leading-relaxed font-medium">
+                        <!-- الشرح القانوني المفصل -->
+                    </p>
+                    <div class="pt-2 border-t border-current/15 flex items-center justify-between text-xs font-bold opacity-80">
+                        <span id="feedback-rule">القاعدة: المالية العامة</span>
+                        <span>إعداد: نايف المحذوري</span>
+                    </div>
+                </div>
+
+                <!-- أزرار التنقل أسفل البطاقة -->
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+                    <button onclick="confirmExit()" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-500 hover:text-rose-600 hover:bg-rose-50 transition">
+                        إنهاء والعودة للبداية
+                    </button>
+                    <button id="next-btn" onclick="nextQuestion()" disabled class="px-7 py-3 rounded-xl bg-navy-900 disabled:bg-slate-300 disabled:cursor-not-allowed hover:bg-navy-800 text-white font-extrabold text-sm shadow transition flex items-center gap-2">
+                        <span id="next-btn-text">السؤال التالي</span>
+                        <span>←</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- الشاشة 3: لوحة النتائج النهائية وتحليل الأداء                     -->
+        <!-- ================================================================= -->
+        <section id="result-screen" class="hidden fade-in space-y-6">
+            <!-- بطاقة النتيجة الرئيسية -->
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-md overflow-hidden">
+                <div class="bg-gradient-to-l from-navy-950 via-navy-900 to-navy-800 p-6 sm:p-10 text-white text-center space-y-3 border-b-4 border-gold-500">
+                    <div class="inline-block px-4 py-1 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-extrabold">
+                        تقرير الأداء الأكاديمي • مقرر المالية العامة LAW403
+                    </div>
+                    <h2 id="result-student-title" class="text-2xl sm:text-3xl font-black text-white">
+                        أحسنت! اكتمل الاختبار بنجاح
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gold-400 font-bold">
+                        إعداد وتقديم: نايف المحذوري • سلطنة عُمان
+                    </p>
+                </div>
+
+                <!-- النسبة المئوية والدرجة -->
+                <div class="p-6 sm:p-8 space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
+                        <!-- دائرة النسبة -->
+                        <div class="flex flex-col items-center justify-center p-6 rounded-3xl bg-gold-50 border-2 border-gold-400/50">
+                            <div class="text-xs font-extrabold text-gold-600 uppercase">النسبة المئوية</div>
+                            <div id="final-percentage" class="text-5xl font-black text-navy-900 my-2">0%</div>
+                            <div id="final-grade-badge" class="px-4 py-1 rounded-full text-xs font-extrabold bg-navy-900 text-gold-400">
+                                التقدير: ممتاز
+                            </div>
+                        </div>
+
+                        <!-- تفاصيل الإجابات -->
+                        <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-2xl bg-marble border border-slate-200 text-center">
+                                <div class="text-xs font-bold text-slate-500">إجمالي الأسئلة</div>
+                                <div id="stat-total" class="text-2xl font-black text-navy-900 mt-1">30</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
+                                <div class="text-xs font-bold text-emerald-700">إجابات صحيحة</div>
+                                <div id="stat-correct" class="text-2xl font-black text-emerald-700 mt-1">0</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-center col-span-2 sm:col-span-1">
+                                <div class="text-xs font-bold text-rose-700">إجابات خاطئة</div>
+                                <div id="stat-wrong" class="text-2xl font-black text-rose-700 mt-1">0</div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-3 p-4 rounded-2xl bg-navy-900/5 border border-navy-900/10 text-xs sm:text-sm text-navy-900 font-semibold leading-relaxed" id="result-advice">
+                                <!-- نصيحة أكاديمية بناءً على المستوى -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- تحليل الأداء حسب المحاور الأربعة -->
+                    <div class="space-y-4">
+                        <h3 class="font-extrabold text-navy-900 text-base sm:text-lg border-b border-slate-200 pb-2">
+                            📊 تحليل الأداء التفصيلي حسب محاور المقرر
+                        </h3>
+                        <div id="axes-breakdown" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- تُحقن بطاقات تحليل المحاور هنا -->
+                        </div>
+                    </div>
+
+                    <!-- أزرار الإجراءات النهائية -->
+                    <div class="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-center gap-3">
+                        <button id="review-wrong-btn" onclick="startWrongReview()" class="px-5 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-sm shadow transition flex items-center gap-2">
+                            <span>🔍 مراجعة الأسئلة الخاطئة فقط (<span id="wrong-count-btn">0</span>)</span>
+                        </button>
+                        <button onclick="shareWhatsApp()" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow transition flex items-center gap-2">
+                            <span>📲 مشاركة النتيجة عبر واتساب</span>
+                        </button>
+                        <button onclick="resetToHome()" class="px-5 py-3 rounded-xl bg-navy-900 hover:bg-navy-800 text-gold-400 font-extrabold text-sm shadow transition flex items-center gap-2">
+                            <span>🔄 إعادة الاختبار / اختيار محور</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم مراجعة الأسئلة الخاطئة (يظهر عند الضغط على زر المراجعة) -->
+            <div id="wrong-review-section" class="hidden space-y-4 fade-in">
+                <div class="bg-rose-900 text-white px-6 py-4 rounded-2xl flex items-center justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-base sm:text-lg">📋 سجل مراجعة الأسئلة الخاطئة والتعليل القانوني</h3>
+                        <p class="text-xs text-rose-200">راجع إجاباتك التي أخطأت فيها لتجنب تكرارها في الاختبار الرسمي • إعداد: نايف المحذوري</p>
+                    </div>
+                </div>
+                <div id="wrong-cards-container" class="space-y-4">
+                    <!-- بطاقات الأسئلة الخاطئة -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- التذييل الرسمي الثابت في كل صفحة (يحمل توقيع نايف المحذوري)          -->
+    <!-- ===================================================================== -->
+    <footer class="bg-navy-950 text-slate-300 border-t-2 border-gold-500/60 py-5 mt-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+            <div class="font-bold text-white">
+                مقرر المالية العامة (LAW403) • سلطنة عُمان
+            </div>
+            <div class="text-gold-400 font-extrabold text-sm">
+                إعداد وتصميم: نايف المحذوري
+            </div>
+            <div class="text-slate-400">
+                جميع الحقوق محفوظة لطلبة القانون • نسخة المراجعة الشاملة
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- صندوق تنبيه مخصص بديل عن alert/confirm                               -->
+    <!-- ===================================================================== -->
+    <div id="custom-modal" class="hidden fixed inset-0 bg-navy-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4 text-center fade-in">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto font-black">
+                !
+            </div>
+            <h4 class="text-lg font-extrabold text-navy-900">تأكيد إنهاء الاختبار</h4>
+            <p class="text-sm text-slate-600">هل ترغب فعلاً في إنهاء المحاولة الحالية والعودة إلى الشاشة الرئيسية؟</p>
+            <div class="flex items-center justify-center gap-3 pt-2">
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition">
+                    متابعة الاختبار
+                </button>
+                <button onclick="closeModal(); resetToHome();" class="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm transition">
+                    نعم، العودة للبداية
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- قاعدة بيانات الأسئلة الـ 30 والمنطق التفاعلي (JavaScript)            -->
+    <!-- ===================================================================== -->
+    <script>
+        // تعريف أسماء المحاور الأربعة
+        const AXES_INFO = {
+            axis1: { id: 'axis1', name: 'المحور الأول: الإيرادات العامة (الرسم، الثمن العام، الإتاوة، الضريبة)' },
+            axis2: { id: 'axis2', name: 'المحور الثاني: القروض العامة وتقسيماتها' },
+            axis3: { id: 'axis3', name: 'المحور الثالث: آلية الإصدار والتكييف القانوني في عُمان' },
+            axis4: { id: 'axis4', name: 'المحور الرابع: وسائل انقضاء القروض العامة وتسويتها' }
+        };
+
+        // بنك الأسئلة الشامل (30 سؤالاً موزعة بدقة على المحاور الأربعة)
+        const QUESTIONS_BANK = [
+            // =================================================================
+            // المحور الأول: الإيرادات العامة (8 أسئلة)
+            // =================================================================
+            {
+                id: 1,
+                axis: 'axis1',
+                type: 'اختيار من متعدد',
+                question: 'يُعرّف الرسم في علم المالية العامة بأنه مبلغ نقدي يُدفع جبراً مقابل:',
+                options: [
+                    'نفع عام بحت لا يعود على دافعه بأي خدمة خاصة مباشرة.',
+                    'نفع خاص محدد يحصل عليه الفرد ويقترن به نفع عام للمجتمع.',
+                    'سلعة تجارية تنتجها المشروعات العامة الصناعية في ظل المنافسة الحرة.',
+                    'زيادة طرأت على القيمة السوقية لعقار بسبب تنفيذ مشروع أشغال عامة.'
+                ],
+                correctIndex: 1,
+                explanation: 'الرسم يُدفع مقابل خدمة فردية خاصة يتلقاها طالب الخدمة (كاستخراج جواز سفر أو رخصة قيادة)، ويقترن بها نفع عام يتمثل في تنظيم المرافق وحفظ الأمن والنظام العام.',
+                rule: 'التمييز بين الرسم والضريبة والإتاوة'
+            },
+            {
+                id: 2,
+                axis: 'axis1',
+                type: 'اختيار من متعدد',
+                question: 'ما هو التفسير القانوني السليم لوجود عنصر "الجبر" في الرسم رغم أن الفرد هو من يتقدم بطلب الخدمة؟',
+                options: [
+                    'لأن الدولة تفرض الرسم على جميع المواطنين سنوياً سواء طلبوا الخدمة أم لا.',
+                    'وجود جبر قانوني في بعض المعاملات، وجبر معنوي ناتج عن احتكار الدولة لتقديم الخدمة الإدارية.',
+                    'لأن الرسم يُقتطع مباشرة من رواتب الموظفين بقوة القانون دون طلب.',
+                    'لأن العلاقة بين طالب الخدمة والدولة علاقة تعاقدية مدنية تخضع لقانون العرض والطلب.'
+                ],
+                correctIndex: 1,
+                explanation: 'يتحقق الجبر في الرسم إما بصورة قانونية مباشرة (كإلزامية استخراج البطاقة الشخصية) أو بصورة معنوية غير مباشرة لأن الدولة تحتكر تقديم الخدمة قانوناً ولا يوجد بديل آخر للفرد.',
+                rule: 'خصائص الرسم (عنصر الإجبار)'
+            },
+            {
+                id: 3,
+                axis: 'axis1',
+                type: 'اختيار من متعدد',
+                question: 'قامت وزارة الإسكان والتخطيط العمراني بشق طريق رئيسي حديث وإنارته، فارتفعت أسعار الأراضي المجاورة للطريق للضعف دون جهد من ملاكها؛ ففرضت الدولة مبلغاً مالياً عليهم. يُسمى هذا الإيراد:',
+                options: [
+                    'الثمن العام (Public Price).',
+                    'الرسم الإداري (Administrative Fee).',
+                    'الإتاوة أو مقابل التحسين (Betterment Levy).',
+                    'القرض العام الإجباري.'
+                ],
+                correctIndex: 2,
+                explanation: 'الإتاوة (مقابل التحسين) هي مبلغ مالي تقتضيه الدولة جبراً من ملاك العقارات التي ارتفعت قيمتها السوقية بسبب قيام الدولة بتنفيذ أشغال عامة في منطقتهم.',
+                rule: 'مفهوم الإتاوة ونطاق تطبيقها'
+            },
+            {
+                id: 4,
+                axis: 'axis1',
+                type: 'صح وخطأ',
+                question: 'يتحدد مقدار الإتاوة (مقابل التحسين) بناءً على إجمالي تكلفة المشروع العام مقسوماً بالتساوي على جميع سكان المنطقة.',
+                options: [
+                    'صحيح',
+                    'خطأ'
+                ],
+                correctIndex: 1,
+                explanation: 'العبارة خاطئة؛ لأن معيار تقدير الإتاوة يتناسب طردياً مع مقدار الزيادة الفعلية التي طرأت على قيمة كل عقار بسبب الأشغال العامة، ويُدفع من ملاك العقارات المستفيدة فقط وليس جميع السكان.',
+                rule: 'معيار تقدير الإتاوة'
+            },
+            {
+                id: 5,
+                axis: 'axis1',
+                type: 'اختيار من متعدد',
+                question: 'أي من الإيرادات العامة التالية ينعدم فيه عنصر الإجبار ويكون دفعه اختيارياً بناءً على علاقة تعاقدية تجارية؟',
+                options: [
+                    'الضريبة الجمركية.',
+                    'رسم القيد في السجل العقاري.',
+                    'الثمن العام.',
+                    'مقابل التحسين (الإتاوة).'
+                ],
+                correctIndex: 2,
+                explanation: 'الثمن العام هو المقابل الذي يدفعه المشتري أو المستهلك اختيارياً للحصول على سلع أو خدمات المشروعات العامة ذات الطابع الصناعي والتجاري، ويخضع لقوى السوق والعرض والطلب.',
+                rule: 'خصائص الثمن العام'
+            },
+            {
+                id: 6,
+                axis: 'axis1',
+                type: 'حالة تطبيقية',
+                question: 'قارن بين "الرسم" و"الثمن العام": إذا اشترى مواطن تذكرة قطار من شركة نقل حكومية تعمل في سوق تنافسي، فإن المبلغ المدفوع يُعد:',
+                options: [
+                    'رسماً؛ لأن الجهة المقدمة للخدمة مملوكة للدولة.',
+                    'ثمناً عاماً؛ لأن النشاط ذو طابع اقتصادي تجاري والدفع فيه اختياري مقابل نفع خاص بحت.',
+                    'إتاوة؛ لأن القطار يرفع من قيمة المناطق التي يمر بها.',
+                    'ضريبة غير مباشرة على النقل.'
+                ],
+                correctIndex: 1,
+                explanation: 'العبرة في التمييز هي بطبيعة النشاط وعنصر الجبر؛ فالنقل التجاري مشروع اقتصادي يدفع فيه المستهلك الثمن باختياره مقابل منفعة خاصة بحتة، لذا يُكيّف كثمن عام لا كرسم.',
+                rule: 'المعيار المميز للثمن العام عن الرسم'
+            },
+            {
+                id: 7,
+                axis: 'axis1',
+                type: 'صح وخطأ',
+                question: 'تُدفع الإتاوة بشكل دوري متكرر كل عام ما دام العقار قائماً في المنطقة التي نُفذ فيها المشروع العام.',
+                options: [
+                    'صحيح',
+                    'خطأ'
+                ],
+                correctIndex: 1,
+                explanation: 'العبارة خاطئة؛ فالإتاوة تُفرض وتُحصّل مرة واحدة فقط (أو على أقساط محددة) بمناسبة تنفيذ المشروع العام الذي أدى لارتفاع قيمة العقار، وليست دورية كالضريبة.',
+                rule: 'عدم دورية الإتاوة'
+            },
+            {
+                id: 8,
+                axis: 'axis1',
+                type: 'اختيار من متعدد',
+                question: 'الفرق الجوهري بين "الضريبة" و"الرسم" يكمن في أن الضريبة تُفرض وتُحصّل:',
+                options: [
+                    'جبراً وبلا مقابل خاص مباشر لتحقيق النفع العام وتغطية الأعباء العامة.',
+                    'اختيارياً مقابل خدمة إدارية فردية يطلبها المكلف.',
+                    'جبراً مقابل زيادة قيمة عقار المكلف.',
+                    'جبراً مع التزام الدولة برد قيمتها للمكلف بعد خمس سنوات.'
+                ],
+                correctIndex: 0,
+                explanation: 'الضريبة فريضة مالية تدفع جبراً وبصفة نهائية دون مقابل خاص مباشر، بخلاف الرسم الذي يرتبط بخدمة خاصة محددة يتلقاها دافع الرسم.',
+                rule: 'التمييز بين الضريبة والرسم'
+            },
+
+            // =================================================================
+            // المحور الثاني: القروض العامة وتقسيماتها (8 أسئلة)
+            // =================================================================
+            {
+                id: 9,
+                axis: 'axis2',
+                type: 'اختيار من متعدد',
+                question: 'الأصل العام في القروض العامة من حيث حرية الاكتتاب أن تكون:',
+                options: [
+                    'إجبارية تُفرض بقانون على جميع المواطنين.',
+                    'اختيارية يتمتع فيها الأفراد والمؤسسات بحرية الإقبال على الاكتتاب أو الإحجام عنه.',
+                    'مختلطة نصفها إجباري ونصفها اختياري.',
+                    'مقصورة على البنوك الأجنبية دون المواطنين.'
+                ],
+                correctIndex: 1,
+                explanation: 'الأصل في القرض العام أنه عقد اختياري يقوم على حرية المقرض في شراء سندات القرض أو الامتناع، ولا تلجأ الدولة للإجبار إلا استثناءً في ظروف خاصة.',
+                rule: 'الأصل في القروض العامة (حرية الاكتتاب)'
+            },
+            {
+                id: 10,
+                axis: 'axis2',
+                type: 'اختيار من متعدد',
+                question: 'متى تلجأ الدولة استثناءً إلى إصدار "قرض عام إجباري"؟',
+                options: [
+                    'عند وجود فائض ضخم في الميزانية العامة ورغبتها في توزيع الأرباح.',
+                    'عند ضعف الثقة في مالية الدولة (كأوقات الحروب والأزمات) أو لسحب السيولة لكبح التضخم.',
+                    'في الظروف الاقتصادية الطبيعية لتمويل النفقات الجارية المعتادة.',
+                    'عندما تنخفض أسعار الفائدة في السوق العالمية إلى الصفر.'
+                ],
+                correctIndex: 1,
+                explanation: 'تلجأ الدولة للقرض الإجباري لسببين رئيسيين: ضعف ثقة الجمهور في مالية الدولة وقت الأزمات والحروب، أو لامتصاص القوة الشرائية الفائضة وتقليل الضغوط التضخمية.',
+                rule: 'مبررات اللجوء للقرض الإجباري'
+            },
+            {
+                id: 11,
+                axis: 'axis2',
+                type: 'حالة تطبيقية',
+                question: 'رغم تشابه "القرض الإجباري" مع "الضريبة" في عنصر الإجبار القانوني عند التحصيل، إلا أنه يظل متميزاً عنها قانوناً ومالياً بـ:',
+                options: [
+                    'أن القرض الإجباري يُفرض بقرار إداري بينما الضريبة تصدر بمرسوم.',
+                    'التزام الدولة برد أصل مبلغ القرض للمقرض مستقبلاً ودفع فوائد عنه.',
+                    'أن الضريبة تُدفع اختيارياً بينما القرض يُدفع جبراً.',
+                    'عدم جواز فرض القرض الإجباري على الشركات والبنوك.'
+                ],
+                correctIndex: 1,
+                explanation: 'الضريبة تُقتطع بصفة نهائية بلا رد وبلا فائدة، أما القرض الإجباري فيظل ديناً في ذمة الدولة تلتزم برد أصله ودفع فوائده الدورية.',
+                rule: 'التمييز بين القرض الإجباري والضريبة'
+            },
+            {
+                id: 12,
+                axis: 'axis2',
+                type: 'اختيار من متعدد',
+                question: 'في "القرض العام المؤبد"، ما المقصود بالقاعدة الفقهية: "أن صفة التأبيد مقررة لصالح الدولة وحدها"؟',
+                options: [
+                    'أن الدولة محرومة قانوناً من سداد القرض إلى الأبد حتى لو توفرت لديها الأموال.',
+                    'أن الدائن لا يملك مطالبة الدولة برد الأصل، بينما تملك الدولة وحدها خيار السداد متى شاءت.',
+                    'أن الدولة معفاة من دفع الفوائد السنوية طوال فترة بقاء القرض.',
+                    'أن القرض يسقط بالتقادم بعد مرور خمس سنوات دون سداد.'
+                ],
+                correctIndex: 1,
+                explanation: 'في القرض المؤبد لا يلتزم المدين (الدولة) بأجل محدد للسداد، فلا يجوز للدائن إجبارها على الوفاء، لكن للدولة الحق في سداد الأصل وإنهاء القرض في الوقت الذي يناسب مصلحتها المالية.',
+                rule: 'أحكام القرض العام المؤبد'
+            },
+            {
+                id: 13,
+                axis: 'axis2',
+                type: 'اختيار من متعدد',
+                question: 'تُعد "أذون الخزانة" التي تصدرها الدولة لمدة 3 أشهر لتغطية عجز موسمي مؤقت في الخزينة العامة مثالاً على:',
+                options: [
+                    'القروض العامة المؤبدة.',
+                    'القروض المؤقتة طويلة الأجل.',
+                    'القروض المؤقتة قصيرة الأجل (القروض السائرة).',
+                    'القروض المؤقتة متوسطة الأجل.'
+                ],
+                correctIndex: 2,
+                explanation: 'القروض المؤقتة قصيرة الأجل (السائرة) هي التي لا تتجاوز مدتها سنة واحدة (وغالباً 3 أو 6 أو 9 أشهر)، وأبرز صورها أذون الخزانة.',
+                rule: 'تقسيم القروض المؤقتة حسب المدة'
+            },
+            {
+                id: 14,
+                axis: 'axis2',
+                type: 'صح وخطأ',
+                question: 'القروض العامة متوسطة الأجل هي التي تتراوح مدة استحقاقها بين سنة واحدة وخمس سنوات، بينما تزيد مدة القروض طويلة الأجل على خمس سنوات.',
+                options: [
+                    'صحيح',
+                    'خطأ'
+                ],
+                correctIndex: 0,
+                explanation: 'العبارة صحيحة تماماً؛ فالقرض قصير الأجل أقل من سنة، ومتوسط الأجل من سنة إلى 5 سنوات، وطويل الأجل أكثر من 5 سنوات.',
+                rule: 'المدد الزمنية للقروض المؤقتة'
+            },
+            {
+                id: 15,
+                axis: 'axis2',
+                type: 'اختيار من متعدد',
+                question: 'ما هو المعيار المعتمد في الفقه المالي للتمييز بين "القرض الداخلي" و"القرض الخارجي"؟',
+                options: [
+                    'عملة إصدار القرض فقط.',
+                    'النطاق المكاني لطرح القرض ومكان إقامة المكتتبين (داخل إقليم الدولة أم في الأسواق الخارجية).',
+                    'مدى استخدام القرض في مشروعات داخلية أو خارجية.',
+                    'كون القرض مؤبداً أو مؤقتاً.'
+                ],
+                correctIndex: 1,
+                explanation: 'يقوم التقسيم المكاني للقروض على مكان الإصدار والاكتتاب؛ فالقرض الداخلي يُطرح في السوق الوطنية ويكتتب فيه المقيمون داخل الدولة، بينما الخارجي يُطرح في الأسواق المالية الدولية.',
+                rule: 'التقسيم المكاني للقروض العامة'
+            },
+            {
+                id: 16,
+                axis: 'axis2',
+                type: 'صح وخطأ',
+                question: 'تلتزم الدولة في القرض العام المؤبد بدفع الفوائد الدورية المتفق عليها بانتظام ما دامت لم تقم برد أصل القرض.',
+                options: [
+                    'صحيح',
+                    'خطأ'
+                ],
+                correctIndex: 0,
+                explanation: 'العبارة صحيحة؛ عدم التزام الدولة برد أصل القرض في أجل محدد في القرض المؤبد يقابله التزامها المستمر بدفع الفوائد السنوية للمكتتبين طالما بقي القرض قائماً.',
+                rule: 'التزامات الدولة في القرض المؤبد'
+            },
+
+            // =================================================================
+            // المحور الثالث: آلية الإصدار والتكييف القانوني في عُمان (7 أسئلة)
+            // =================================================================
+            {
+                id: 17,
+                axis: 'axis3',
+                type: 'اختيار من متعدد',
+                question: 'في النظام المالي لسلطنة عُمان، كيف تتم الموافقة التشريعية على إصدار القروض العامة؟',
+                options: [
+                    'يُشترط صدور قانون أو مرسوم سلطاني مستقل خاص بكل عملية اقتراض على حدة.',
+                    'لا يُشترط قانون مستقل لكل قرض، بل تتم الموافقة عبر قانون الدين العام واعتماد الميزانية العامة وقرارات مجلس الوزراء.',
+                    'يتم إصدار القرض بقرار منفرد من البنك المركزي دون أي صلة بالميزانية العامة.',
+                    'يُشترط إجراء استفتاء شعبي عام قبل كل إصدار للسندات الحكومية.'
+                ],
+                correctIndex: 1,
+                explanation: 'تتميز الآلية في سلطنة عُمان بالمرونة؛ فلا يُشترط صدور قانون مستقل لكل قرض، بل يستند الإصدار إلى قانون الدين العام واعتماد الميزانية العامة للدولة وقرارات مجلس الوزراء ووزارة المالية.',
+                rule: 'آلية صدور القرض العام في سلطنة عُمان'
+            },
+            {
+                id: 18,
+                axis: 'axis3',
+                type: 'اختيار من متعدد',
+                question: 'تُوصَف رقابة السلطة التشريعية (مجلس عُمان) على القروض العامة في سلطنة عُمان بأنها:',
+                options: [
+                    'رقابة سابقة مباشرة على كل سند قرض يصدر.',
+                    'رقابة تشريعية غير مباشرة تمارس عند مناقشة مشروع الميزانية العامة للدولة وحسابها الختامي.',
+                    'رقابة قضائية دستورية لاحقة.',
+                    'رقابة معدومة كلياً في جميع مراحل الميزانية.'
+                ],
+                correctIndex: 1,
+                explanation: 'بما أن مجلس عُمان يناقش مشروع الميزانية العامة للدولة (التي تتضمن بنود العجز ووسائل تمويله بالاقتراض)، فإن رقابته على الاقتراض العام تتحقق بصورة غير مباشرة عبر الميزانية.',
+                rule: 'الرقابة التشريعية غير المباشرة في عُمان'
+            },
+            {
+                id: 19,
+                axis: 'axis3',
+                type: 'اختيار من متعدد',
+                question: 'ما هو الرأي الفقهي الراجح بشأن "التكييف القانوني للقرض العام"؟',
+                options: [
+                    'أنه عمل من أعمال السيادة الخالص الذي لا يخضع لأي التزامات تعاقدية.',
+                    'أنه عقد من عقود القانون العام (عقد إداري) يقوم على توافق إرادتين مع تمتع الدولة بامتيازات السلطة العامة.',
+                    'أنه عقد قرض مدني عادي يخضع لقواعد القانون الخاص على قدم المساواة التامة.',
+                    'أنه هبة مالية مشروطة يقدمها الأفراد للخزينة العامة.'
+                ],
+                correctIndex: 1,
+                explanation: 'الرأي الراجح يكيّف القرض العام باعتباره عقداً من عقود القانون العام؛ لأنه يقوم على تلاقي إرادة الدولة والمكتتب، ويتصل بمرفق عام ويمنح الدولة شروطاً استثنائية غير مألوفة في العقود المدنية.',
+                rule: 'التكييف القانوني الراجح للقرض العام'
+            },
+            {
+                id: 20,
+                axis: 'axis3',
+                type: 'اختيار من متعدد',
+                question: 'ما هي الميزة الرئيسية لطريقة "الاكتتاب المصرفي" (عن طريق البنوك) مقارنة بالاكتتاب العام المباشر؟',
+                options: [
+                    'توفير العمولات المصرفية على الدولة بشكل كامل.',
+                    'ضمان حصول الدولة على كامل مبلغ القرض بسرعة وتحمل البنوك مخاطر عدم التغطية.',
+                    'منع البنوك التجارية من تداول السندات الحكومية.',
+                    'إعفاء الدولة من دفع أي فوائد على القرض.'
+                ],
+                correctIndex: 1,
+                explanation: 'في الاكتتاب المصرفي تتولى البنوك شراء القرض أو ضمان تغطيته بالكامل، مما يضمن للدولة الحصول على السيولة فوراً ويجنبها مخاطر فشل الاكتتاب، وإن كان يكلفها عمولات أو خصم إصدار.',
+                rule: 'مزايا الاكتتاب المصرفي'
+            },
+            {
+                id: 21,
+                axis: 'axis3',
+                type: 'حالة تطبيقية',
+                question: 'إذا طرحت وزارة المالية سندات تنمية مباشرة للجمهور عبر قنواتها دون بيعها لبنك ضامن، فإن مخاطر عدم إقبال الجمهور على شراء كامل السندات (عدم التغطية) يتحملها:',
+                options: [
+                    'البنوك التجارية العاملة في السلطنة بالتضامن.',
+                    'الدولة وحدها؛ لأنها اختارت أسلوب الاكتتاب العام المباشر.',
+                    'المكتتبون الأوائل الذين اشتروا السندات.',
+                    'الصندوق الاحتياطي العام للدولة تلقائياً.'
+                ],
+                correctIndex: 1,
+                explanation: 'في الاكتتاب العام المباشر تتعامل الدولة مباشرة مع الجمهور فتتجنب عمولات البنوك، ولكنها في المقابل تتحمل وحدها مخاطر عدم تغطية كامل القرض المطروح.',
+                rule: 'مخاطر الاكتتاب العام المباشر'
+            },
+            {
+                id: 22,
+                axis: 'axis3',
+                type: 'صح وخطأ',
+                question: 'يرى أنصار الاتجاه الذي يكيّف القرض العام كـ "عمل من أعمال السيادة" أن الدولة تملك تعديل شروط القرض أو تأجيله بإرادتها المنفردة تحقيقاً للمصلحة العامة.',
+                options: [
+                    'صحيح',
+                    'خطأ'
+                ],
+                correctIndex: 0,
+                explanation: 'العبارة صحيحة؛ فهذا هو الأساس الذي استند إليه أصحاب نظرية عمل السيادة لإخراج القرض العام من دائرة العقود، غير أن الرأي الراجح يغلّب الطبيعة التعاقدية في إطار القانون العام.',
+                rule: 'حجج الاتجاهات الفقهية في تكييف القرض'
+            },
+            {
+                id: 23,
+                axis: 'axis3',
+                type: 'اختيار من متعدد',
+                question: 'يُقصد بـ "الاكتتاب في سندات القرض العام":',
+                options: [
+                    'قيام البرلمان بالتصويت على مشروع قانون الميزانية.',
+                    'تقدم الأفراد أو المؤسسات بطلب شراء صكوك القرض ودفع قيمتها للدولة ليصبحوا دائنين لها.',
+                    'قيام الدولة بإلغاء السندات القديمة دون دفع قيمتها.',
+                    'تسجيل القرض في السجلات العقارية.'
+                ],
+                correctIndex: 1,
+                explanation: 'الاكتتاب هو الإجراء القانوني والمالي الذي يعبر به المستثمر عن إرادته في إقراض الدولة عبر شراء السندات ودفع قيمتها مقابل استلام صك يثبت حقه في الأصل والفائدة.',
+                rule: 'مفهوم الاكتتاب في السندات'
+            },
+
+            // =================================================================
+            // المحور الرابع: وسائل انقضاء القروض العامة وتسويتها (7 أسئلة)
+            // =================================================================
+            {
+                id: 24,
+                axis: 'axis4',
+                type: 'اختيار من متعدد',
+                question: 'تُعد الوسيلة الطبيعية والأصلية لانقضاء القرض العام، وتتمثل في رد القيمة الاسمية للسندات دفعة واحدة عند حلول الأجل:',
+                options: [
+                    'التثبيت (Consolidation).',
+                    'التبديل (Conversion).',
+                    'الوفاء (Repayment).',
+                    'الاستهلاك التدريجي (Amortization).'
+                ],
+                correctIndex: 2,
+                explanation: 'الوفاء هو الطريق الطبيعي لانقضاء الدين العام؛ حيث تقوم الدولة برد أصل القرض (القيمة الاسمية) كاملاً دفعة واحدة للدائنين في تاريخ الاستحقاق.',
+                rule: 'الوفاء كوسيلة طبيعية لانقضاء القرض'
+            },
+            {
+                id: 25,
+                axis: 'axis4',
+                type: 'اختيار من متعدد',
+                question: 'ما هو الحكم القانوني لـ "استهلاك القرض العام" (السداد التدريجي على أقساط) من حيث الإلزام، وما هو مصدر تمويله الرئيسي؟',
+                options: [
+                    'إجباري للقروض المؤبدة واختياري للمؤقتة، ومصدره الاقتراض الخارجي.',
+                    'إجباري للقروض المؤقتة واختياري للمؤبدة، ومصدره الرئيسي فائض الميزانية العامة.',
+                    'اختياري في جميع أنواع القروض، ومصدره إصدار عملة ورقية جديدة.',
+                    'إجباري في جميع أنواع القروض، ومصدره فرض رسوم إضافية.'
+                ],
+                correctIndex: 1,
+                explanation: 'الاستهلاك إجباري في القروض المؤقتة لالتزام الدولة بتاريخ محدد لرد الأصل، واختياري في المؤبدة؛ ويُمول أساساً من فائض الميزانية العامة حتى يكون إنهاءً حقيقياً للدين.',
+                rule: 'أحكام الاستهلاك ومصدر تمويله'
+            },
+            {
+                id: 26,
+                axis: 'axis4',
+                type: 'اختيار من متعدد',
+                question: 'يُعرّف "تثبيت القرض العام" (Consolidation) بأنه:',
+                options: [
+                    'استبدال دين طويل الأجل مرتفع الفائدة بدين جديد أقل فائدة.',
+                    'تحويل دين سائر (قصير الأجل) حلّ أجله إلى دين مثبت (متوسط أو طويل الأجل أو مؤبد).',
+                    'سداد أصل القرض على أقساط سنوية بالقرعة.',
+                    'إعفاء الدولة من سداد أصل القرض وفوائده نهائياً.'
+                ],
+                correctIndex: 1,
+                explanation: 'التثبيت يهدف إلى تأجيل عبء السداد عبر تحويل الدين السائر (قصير الأجل) الذي حان موعد استحقاقه إلى دين مثبت طويل أو متوسط الأجل أو مؤبد.',
+                rule: 'مفهوم تثبيت القرض العام'
+            },
+            {
+                id: 27,
+                axis: 'axis4',
+                type: 'حالة تطبيقية',
+                question: 'إذا عجزت الدولة عن الوفاء بدين سائر حل أجله، فأصدرت قانوناً يُلزم حاملي السندات بتأجيل استلام أموالهم لمدة 10 سنوات دون موافقتهم؛ فإن هذا الإجراء يُعد:',
+                options: [
+                    'تثبيتاً اختيارياً مشروعاً يعزز الثقة في مالية الدولة.',
+                    'تثبيتاً إجبارياً يُعد قانوناً إخلالاً بالعقد وتوقفاً جزئياً عن الدفع.',
+                    'تبديلاً ناجحاً للقرض العام.',
+                    'وفاءً معجلاً بالتزامات الدولة.'
+                ],
+                correctIndex: 1,
+                explanation: 'التثبيت الإجباري يفرضه المشرع بالإرادة المنفردة للدولة، ويُكيّف قانوناً باعتباره إخلالاً صريحاً بالعقد وتوقفاً جزئياً عن الدفع (إفلاساً مقنّعاً) يضر بسمعة الدولة الائتمانية.',
+                rule: 'التكييف القانوني للتثبيت الإجباري'
+            },
+            {
+                id: 28,
+                axis: 'axis4',
+                type: 'اختيار من متعدد',
+                question: 'ما هو الشرط المالي الأساسي لنجاح "التثبيت الاختياري"، وما الذي يجنيه المقرض مقابل موافقته على التمديد؟',
+                options: [
+                    'أن تقل الفائدة الجديدة عن سعر السوق، ويحصل المقرض على أصل ماله فقط.',
+                    'ألا تقل الفائدة الممنوحة في السندات الجديدة عن سعر الفائدة السائد في السوق، ويجني المقرض فوائد دورية ومكافآت فوق أصل ماله.',
+                    'أن يكون القرض الجديد بدون فوائد تماماً مع إلزام المقرض بالانتظار.',
+                    'أن يُشترط موافقة البنك الدولي على كل سند على حدة.'
+                ],
+                correctIndex: 1,
+                explanation: 'لإقناع المقرض بترك أمواله لدى الدولة لفترة أطول برضاه، يجب ألا تقل الفائدة الجديدة عن فائدة السوق السائدة، وبذلك يجني المقرض أرباحاً صافية (فوائد دورية وإعفاءات/مكافآت) فوق أصل ماله المحفوظ.',
+                rule: 'شرط نجاح التثبيت الاختياري ومنافع المقرض'
+            },
+            {
+                id: 29,
+                axis: 'axis4',
+                type: 'اختيار من متعدد',
+                question: 'يختلف "التبديل" (Conversion) عن "التثبيت" في أن التبديل:',
+                options: [
+                    'يسري على الديون السائرة (قصيرة الأجل) فقط لتمديد أجلها.',
+                    'يسري على الديون المثبتة فقط، ويهدف إلى استبدال دين مرتفع الفائدة بدين جديد أقل فائدة.',
+                    'يهدف إلى رفع سعر الفائدة على الخزينة العامة.',
+                    'لا يتطلب توافر الثقة المالية في الدولة لنجاحه.'
+                ],
+                correctIndex: 1,
+                explanation: 'التبديل يرد على الديون المثبتة (طويلة الأجل أو المؤبدة) فقط، وهدفه تخفيض عبء الفوائد السنوية عبر استبدال القرض مرتفع الفائدة بقرض جديد أقل فائدة.',
+                rule: 'التمييز الدقيق بين التبديل والتثبيت'
+            },
+            {
+                id: 30,
+                axis: 'axis4',
+                type: 'صح وخطأ',
+                question: 'لنجاح عملية التبديل الاختياري للقرض العام، يُشترط توافر الثقة المالية في الدولة، وأن يكون سعر الفائدة الجديد مساوياً لسعر السوق على الأقل، وألا تكون مدة القرض الجديد طويلة جداً.',
+                options: [
+                    'صحيح',
+                    'خطأ'
+                ],
+                correctIndex: 0,
+                explanation: 'العبارة صحيحة تماماً؛ فهذه هي الشروط الثلاثة الجوهرية لنجاح التبديل الاختياري حتى يقبل الدائنون السندات الجديدة بدلاً من المطالبة باسترداد أموالهم نقداً.',
+                rule: 'شروط نجاح التبديل الاختياري'
+            }
+        ];
+
+        // متغيرات حالة التطبيق
+        let selectedMode = 'all';
+        let activeQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let userAnswers = []; // لتخزين سجل إجابات الطالب
+
+        // اختيار نمط الاختبار من الواجهة الترحيبية
+        function selectMode(mode, btnEl) {
+            selectedMode = mode;
+            const buttons = document.querySelectorAll('.mode-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('selected-mode', 'border-navy-900', 'bg-navy-900', 'text-white', 'shadow-md');
+                btn.classList.add('border-slate-200', 'bg-white', 'text-navy-900');
+                const title = btn.querySelector('div > div');
+                const desc = btn.querySelector('p');
+                if (title) {
+                    title.classList.remove('text-gold-400');
+                    title.classList.add('text-navy-900');
+                }
+                if (desc) {
+                    desc.classList.remove('text-slate-200');
+                    desc.classList.add('text-slate-500');
+                }
+            });
+
+            btnEl.classList.remove('border-slate-200', 'bg-white', 'text-navy-900');
+            btnEl.classList.add('selected-mode', 'border-navy-900', 'bg-navy-900', 'text-white', 'shadow-md');
+            const activeTitle = btnEl.querySelector('div > div');
+            const activeDesc = btnEl.querySelector('p');
+            if (activeTitle) {
+                activeTitle.classList.remove('text-navy-900');
+                activeTitle.classList.add('text-gold-400');
+            }
+            if (activeDesc) {
+                activeDesc.classList.remove('text-slate-500');
+                activeDesc.classList.add('text-slate-200');
+            }
+        }
+
+        // بدء الاختبار
+        function startQuiz() {
+            if (selectedMode === 'all') {
+                activeQuestions = [...QUESTIONS_BANK];
+            } else {
+                activeQuestions = QUESTIONS_BANK.filter(q => q.axis === selectedMode);
+            }
+
+            currentIndex = 0;
+            score = 0;
+            userAnswers = [];
+
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+
+            renderQuestion();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // عرض السؤال الحالي
+        function renderQuestion() {
+            const q = activeQuestions[currentIndex];
+            const total = activeQuestions.length;
+
+            // تحديث الشارات وشريط التقدم
+            document.getElementById('current-axis-badge').textContent = AXES_INFO[q.axis].name.split(':')[0];
+            document.getElementById('question-type-badge').textContent = q.type;
+            document.getElementById('q-current-num').textContent = currentIndex + 1;
+            document.getElementById('q-total-num').textContent = total;
+            document.getElementById('live-score').textContent = score;
+
+            const progressPercent = ((currentIndex + 1) / total) * 100;
+            document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+
+            // تحديث نص السؤال
+            document.getElementById('question-text').textContent = `${currentIndex + 1}. ${q.question}`;
+
+            // إخفاء صندوق التعليل وتعطيل زر التالي
+            const feedbackBox = document.getElementById('feedback-box');
+            feedbackBox.classList.add('hidden');
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.disabled = true;
+            document.getElementById('next-btn-text').textContent = (currentIndex === total - 1) ? 'عرض النتيجة النهائية' : 'السؤال التالي';
+
+            // بناء أزرار الخيارات
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            const letters = ['أ', 'ب', 'ج', 'د'];
+            q.options.forEach((optText, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'option-card w-full text-right p-4 rounded-2xl border-2 border-slate-200 bg-white flex items-center gap-3.5 group';
+                btn.onclick = () => handleAnswer(idx, btn);
+
+                const badgeText = q.type === 'صح وخطأ' ? (idx === 0 ? '✓' : '✗') : letters[idx];
+
+                btn.innerHTML = `
+                    <span class="opt-badge w-9 h-9 rounded-xl bg-slate-100 group-hover:bg-gold-500 group-hover:text-navy-950 text-navy-900 font-black text-sm flex items-center justify-center shrink-0 transition">
+                        ${badgeText}
+                    </span>
+                    <span class="text-sm sm:text-base font-bold text-navy-900 leading-snug flex-grow">
+                        ${optText}
+                    </span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        // معالجة اختيار الإجابة وعرض التصحيح الفوري
+        function handleAnswer(selectedIdx, clickedBtn) {
+            const q = activeQuestions[currentIndex];
+            const isCorrect = (selectedIdx === q.correctIndex);
+
+            if (isCorrect) {
+                score++;
+                document.getElementById('live-score').textContent = score;
+            }
+
+            // حفظ نتيجة السؤال
+            userAnswers.push({
+                questionObj: q,
+                selectedIdx: selectedIdx,
+                isCorrect: isCorrect
+            });
+
+            // تعطيل جميع الأزرار وتلوين الصحيح والخاطئ
+            const allBtns = document.querySelectorAll('#options-container button');
+            allBtns.forEach((btn, idx) => {
+                btn.disabled = true;
+                const badge = btn.querySelector('.opt-badge');
+
+                if (idx === q.correctIndex) {
+                    btn.classList.remove('border-slate-200', 'bg-white');
+                    btn.classList.add('border-emerald-500', 'bg-emerald-50');
+                    badge.classList.remove('bg-slate-100', 'text-navy-900');
+                    badge.classList.add('bg-emerald-600', 'text-white');
+                } else if (idx === selectedIdx && !isCorrect) {
+                    btn.classList.remove('border-slate-200', 'bg-white');
+                    btn.classList.add('border-rose-500', 'bg-rose-50');
+                    badge.classList.remove('bg-slate-100', 'text-navy-900');
+                    badge.classList.add('bg-rose-600', 'text-white');
+                } else {
+                    btn.classList.add('opacity-55');
+                }
+            });
+
+            // إظهار صندوق التعليل القانوني والمالي
+            const feedbackBox = document.getElementById('feedback-box');
+            const feedbackHeader = document.getElementById('feedback-header');
+            const feedbackExplanation = document.getElementById('feedback-explanation');
+            const feedbackRule = document.getElementById('feedback-rule');
+
+            feedbackBox.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-400', 'text-emerald-950', 'bg-rose-50', 'border-rose-400', 'text-rose-950');
+
+            if (isCorrect) {
+                feedbackBox.classList.add('bg-emerald-50', 'border-emerald-400', 'text-emerald-950');
+                feedbackHeader.innerHTML = `<span class="text-xl">✅</span> <span>إجابة صحيحة وموفقة!</span>`;
+            } else {
+                feedbackBox.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-950');
+                feedbackHeader.innerHTML = `<span class="text-xl">❌</span> <span>إجابة غير صحيحة — راجع التعليل القانوني:</span>`;
+            }
+
+            feedbackExplanation.textContent = q.explanation;
+            feedbackRule.textContent = `📌 القاعدة: ${q.rule}`;
+
+            // تفعيل زر السؤال التالي
+            document.getElementById('next-btn').disabled = false;
+        }
+
+        // الانتقال للسؤال التالي أو عرض النتائج
+        function nextQuestion() {
+            if (currentIndex < activeQuestions.length - 1) {
+                currentIndex++;
+                renderQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                showResults();
+            }
+        }
+
+        // عرض لوحة النتائج النهائية
+        function showResults() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            document.getElementById('wrong-review-section').classList.add('hidden');
+
+            const studentName = document.getElementById('student-name').value.trim();
+            const total = activeQuestions.length;
+            const wrongCount = total - score;
+            const percentage = Math.round((score / total) * 100);
+
+            // عنوان النتيجة باسم الطالب إن وجد
+            const titleEl = document.getElementById('result-student-title');
+            titleEl.textContent = studentName 
+                ? `تقرير نتيجة الطالب: ${studentName}` 
+                : 'تقرير الأداء النهائي في مقرر المالية العامة LAW403';
+
+            document.getElementById('final-percentage').textContent = `${percentage}%`;
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-correct').textContent = score;
+            document.getElementById('stat-wrong').textContent = wrongCount;
+            document.getElementById('wrong-count-btn').textContent = wrongCount;
+
+            // التقدير الأكاديمي والنصيحة
+            const gradeBadge = document.getElementById('final-grade-badge');
+            const adviceEl = document.getElementById('result-advice');
+
+            if (percentage >= 90) {
+                gradeBadge.textContent = 'التقدير: ممتاز (A)';
+                gradeBadge.className = 'px-4 py-1 rounded-full text-xs font-extrabold bg-emerald-700 text-white';
+                adviceEl.textContent = 'أداء استثنائي! لديك إلمام قانوني ومالي دقيق بأحكام الإيرادات والقروض العامة والتشريع العماني. استمر على هذا المستوى المتميز.';
+            } else if (percentage >= 80) {
+                gradeBadge.textContent = 'التقدير: جيد جداً (B)';
+                gradeBadge.className = 'px-4 py-1 rounded-full text-xs font-extrabold bg-navy-900 text-gold-400';
+                adviceEl.textContent = 'نتيجة رائعة جداً! يُنصح بمراجعة الأسئلة القليلة التي أخطأت فيها لترسيخ الفروق الدقيقة بين التثبيت والتبديل والاستهلاك.';
+            } else if (percentage >= 65) {
+                gradeBadge.textContent = 'التقدير: جيد (C)';
+                gradeBadge.className = 'px-4 py-1 rounded-full text-xs font-extrabold bg-amber-600 text-white';
+                adviceEl.textContent = 'مستوى جيد، ولكن هناك بعض التفاصيل القانونية تحتاج إلى تركيز إضافي. استخدم زر (مراجعة الأسئلة الخاطئة) أدناه لتعزيز فهمك.';
+            } else {
+                gradeBadge.textContent = 'التقدير: يحتاج إلى مراجعة';
+                gradeBadge.className = 'px-4 py-1 rounded-full text-xs font-extrabold bg-rose-700 text-white';
+                adviceEl.textContent = 'ننصحك بمراجعة التعليلات القانونية للأسئلة الخاطئة بعناية ثم إعادة التدرب على كل محور على حدة قبل دخول الاختبار الرسمي.';
+            }
+
+            // التحكم في زر مراجعة الأخطاء
+            const reviewBtn = document.getElementById('review-wrong-btn');
+            if (wrongCount === 0) {
+                reviewBtn.classList.add('hidden');
+            } else {
+                reviewBtn.classList.remove('hidden');
+            }
+
+            // بناء تحليل الأداء لكل محور
+            renderAxesBreakdown();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // تحليل الأداء حسب المحاور
+        function renderAxesBreakdown() {
+            const container = document.getElementById('axes-breakdown');
+            container.innerHTML = '';
+
+            Object.keys(AXES_INFO).forEach(axisKey => {
+                const axisAnswers = userAnswers.filter(a => a.questionObj.axis === axisKey);
+                if (axisAnswers.length === 0) return;
+
+                const axisCorrect = axisAnswers.filter(a => a.isCorrect).length;
+                const axisTotal = axisAnswers.length;
+                const axisPct = Math.round((axisCorrect / axisTotal) * 100);
+
+                let barColor = 'bg-emerald-600';
+                let badgeColor = 'text-emerald-700 bg-emerald-50';
+                if (axisPct < 60) {
+                    barColor = 'bg-rose-600';
+                    badgeColor = 'text-rose-700 bg-rose-50';
+                } else if (axisPct < 80) {
+                    barColor = 'bg-amber-500';
+                    badgeColor = 'text-amber-700 bg-amber-50';
+                }
+
+                const card = document.createElement('div');
+                card.className = 'p-4 rounded-2xl bg-marble border border-slate-200 space-y-2.5';
+                card.innerHTML = `
+                    <div class="flex items-start justify-between gap-2">
+                        <span class="text-xs sm:text-sm font-extrabold text-navy-900 leading-snug">${AXES_INFO[axisKey].name}</span>
+                        <span class="text-xs font-black px-2.5 py-1 rounded-lg ${badgeColor} shrink-0">${axisCorrect} / ${axisTotal} (${axisPct}%)</span>
+                    </div>
+                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                        <div class="${barColor} h-full rounded-full transition-all duration-500" style="width: ${axisPct}%"></div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // عرض سجل الأسئلة الخاطئة فقط للمراجعة
+        function startWrongReview() {
+            const wrongList = userAnswers.filter(a => !a.isCorrect);
+            const reviewSection = document.getElementById('wrong-review-section');
+            const cardsContainer = document.getElementById('wrong-cards-container');
+
+            cardsContainer.innerHTML = '';
+
+            wrongList.forEach((item, index) => {
+                const q = item.questionObj;
+                const userChoiceText = q.options[item.selectedIdx];
+                const correctChoiceText = q.options[q.correctIndex];
+
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl p-5 sm:p-6 border-2 border-rose-200 shadow-sm space-y-3';
+                card.innerHTML = `
+                    <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+                        <span class="font-extrabold text-navy-900 bg-slate-100 px-3 py-1 rounded-lg">${AXES_INFO[q.axis].name.split(':')[0]}</span>
+                        <span class="font-bold text-slate-400">إعداد: نايف المحذوري</span>
+                    </div>
+                    <h4 class="font-extrabold text-navy-900 text-base leading-relaxed">
+                        ${index + 1}. ${q.question}
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                        <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-900">
+                            <span class="font-black block mb-1">❌ إجابتك المختارة:</span>
+                            <span>${userChoiceText}</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+                            <span class="font-black block mb-1">✅ الإجابة الصحيحة:</span>
+                            <span>${correctChoiceText}</span>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-gold-50 border border-gold-400/40 text-xs sm:text-sm text-navy-900 leading-relaxed">
+                        <span class="font-extrabold text-gold-600">💡 التعليل القانوني: </span>${q.explanation}
+                    </div>
+                `;
+                cardsContainer.appendChild(card);
+            });
+
+            reviewSection.classList.remove('hidden');
+            reviewSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // مشاركة النتيجة عبر واتساب باسم نايف المحذوري
+        function shareWhatsApp() {
+            const studentName = document.getElementById('student-name').value.trim();
+            const total = activeQuestions.length;
+            const percentage = Math.round((score / total) * 100);
+            const nameLine = studentName ? `👤 الطالب: ${studentName}\n` : '';
+
+            const message = 
+`⚖️ *نتيجة الاختبار التجريبي الشامل*
+📚 المقرر: *المالية العامة (LAW403) - سلطنة عُمان*
+${nameLine}🎯 الدرجة: *${score} من ${total}* (${percentage}%)
+✍️ إعداد وتقديم: *نايف المحذوري*
+
+بالتوفيق للجميع في الاختبارات!`;
+
+            const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // تأكيد الخروج والعودة
+        function confirmExit() {
+            document.getElementById('custom-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        function resetToHome() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.add('hidden');
+            document.getElementById('welcome-screen').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
